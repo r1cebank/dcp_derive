@@ -152,8 +152,6 @@ func decrypt(inputString string, diversifier []byte) (result string) {
 
 // equivalent to PKCS#11 C_DeriveKey with CKM_AES_CBC_ENCRYPT_DATA
 func DCPDeriveKey(diversifier []byte, iv []byte) (key []byte, err error) {
-	log.Printf("dcp_tool: deriving key, diversifier %x", diversifier)
-
 	fd, err := unix.Socket(unix.AF_ALG, unix.SOCK_SEQPACKET, 0)
 
 	if err != nil {
